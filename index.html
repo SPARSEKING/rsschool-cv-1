@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+</head>
+<body>
+    <style>
+        main{
+            max-width: 1024px;
+            margin: auto;
+            padding: 10px;
+            border: solid 8px rgba(0.1,0.1,0.1,0.1);
+        }
+        header {
+            text-align: center;
+        }
+        .name {
+            margin: auto;
+            text-align: center;
+        }
+        .photo {
+            padding: 10px;
+            display: block;
+            margin: auto;
+            max-width: 100px;
+            border-radius: 50%;
+        }
+    </style>
+    <main>
+        <header>
+            <img class="photo" src="me.png" alt=":)">
+            <h1 class="name">Daniil Zhdanovich</h1>
+        </header>
+        <div class="contacts">
+            <h2>Contacts</h2>
+            <hr>
+            <ul class="contact-list">
+                <li class="link"><a href="https://github.com/MrDanikus">github</a></li>
+                <li class="link"><a href="mailto:daniilzhdanovichwork@gmail.com">gmail</a></li>
+                <li class="link"><a href="https://t.me/cool_bool">telegram</a></li>
+                <li class="link"><a href="https://caitan.me">site</a></li>
+            </ul>
+        </div>
+        <div class="skills">
+            <h2>Skills</h2>
+            <hr>
+            <ul class="skill-list">
+                <li class="skill-list-item">
+                    <h3>Programming Languages</h3>
+                    <ul class="skill-languages-list">
+                        <li class="language-item">C++</li>
+                        <li class="language-item">JavaScript</li>
+                        <li class="language-item">NodeJS</li>
+                        <li class="language-item">C#</li>
+                        <li class="language-item">Python</li>
+                    </ul>
+                </li>
+                <li class="skill-list-item">
+                    <h3>Additional Stuff</h3>
+                    <ul class="skill-additional-list">
+                        <li class="additional-item">Git</li>
+                        <li class="additional-item">CircleCI</li>
+                        <li class="additional-item">Unit Testing</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="code_example">
+            <h2>Code Example</h2>
+            <hr>
+            <pre>
+const GenerateHull = (radius = 10, sharpness = 0.7, points_n = Math.floor(radius)) => {
+    const angle_delta = 2 * Math.PI / points_n;
+    const segments = Array.apply(null,new Array(points_n)).map((_, i) => i + 1);
+    const polar_points = Array.apply(null, Array(points_n)).map(_ => {
+        const seg = segments[Random.IntegerRange(0,segments.length)];
+        const angle = Random.FloatRange(seg * angle_delta, (seg + 1) * angle_delta);
+        return {
+            angle,
+            cos: Math.cos(angle),
+            sin: Math.sin(angle),
+            r: Random.FloatRange(radius * sharpness, radius)
+        }
+    });
+    polar_points.sort((a, b) => {
+        return a.angle - b.angle;
+    })
+    return polar_points.map(point => new Point(point.cos * point.r, point.sin * point.r));
+}
+            </pre>
+        </div>
+        <div class="experience">
+            <h2>Experience</h2>
+            <hr>
+            <ul class="experience-list">
+                <li class="experience-list-item">
+                    <h3>Yandex Music Downloader</h3>
+                    <p>
+                        Chrome extension that allows you to download songs and albums from Yandex Music service.
+                        It's free to use, and for now has more than 1,5k active users.
+                    </p>
+                </li>
+                <li class="experience-list-item">
+                    <h3>Compliment Me Please</h3>
+                    <p>
+                        Machine Learning project where neural network generates different compliments.
+                        Visit this <a href="https://complimentmeplease.com">site</a>!
+                    </p>
+                </li>
+                <li class="experience-list-item">
+                    <h3>Cpplogger</h3>
+                    <p>
+                        C++ library that provides an interface to easily log all formatted information to console or file.
+                        Allows you to use colors and special styles or even create your own ones. Supports Windows/Mac/Linux.
+                        See it on <a href="https://github.com/MrDanikus/cpplogger">github</a>.
+                    </p>
+                </li>
+                <li class="experience-list-item">
+                    <h3>2D Light</h3>
+                    <p>
+                        This is almost a science work. I've created an algorithm that calculates 2d light. 
+                        See <a href="https://mrdanikus.github.io/2DLight/">demo</a> to better understand what I'm talking about. 
+                        Also visit <a href="https://github.com/MrDanikus/2DLight">github page</a> 
+                        and read <a href="https://mrdanikus.github.io/2DLight/article">article</a> (only rus).
+                    </p>
+                </li>
+            </ul>
+            <h3><b>See more on my <a href="https://github.com/MrDanikus">github</a>!</b></h3>
+        </div>
+        <div class="education">
+            <h2>Education</h2>
+            <hr>
+            <ul class="education-list">
+                <li class="education-list-item">
+                    <span class="year-range">2017-2019</span>
+                    <h3>IT, Lyceum BSU (Minsk)</h3>
+                </li>
+                <li class="education-list-item">
+                    <span class="year-range">2019-2023</span>
+                    <h3>BTech, Faculty of Applied Mathematics and Computer Science, BSU (Minsk)</h3>
+                </li>
+            </ul>
+        </div>
+        <div class="language">
+            <h2>Languages</h2>
+            <hr>
+            <ul class="language-list">
+                <li class="language-list-item">Russian <span class="language-level">(native speaker)</span></li>
+                <li class="language-list-item">English <span class="language-level">(B2)</span></li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
